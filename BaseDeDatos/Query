@@ -1,0 +1,223 @@
+CREATE DATABASE Tienda;
+Use Tienda;
+DROP Tienda;
+
+-------------------------------------------
+CREATE TABLE [Usuario] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Usuario] VARCHAR(250) NOT NULL,
+  [CorreoElectronico] VARCHAR(250) NOT NULL,
+  [Contraseña] VARCHAR(250) NOT NULL,
+  [Nombre] VARCHAR(250) NOT NULL,
+  [Apellido] VARCHAR(250) NOT NULL,
+  [NumeroDeTelefono] VARCHAR(20) NOT NULL,
+  [Estado ] BIT NOT NULL,
+  [FechaNacimiento] DATE NOT NULL,
+  [ImagenUsuario] NVARCHAR(500) NOT NULL,
+  [Dirección] VARCHAR(500) NOT NULL,
+  PRIMARY KEY ([Id])
+);
+
+CREATE TABLE [Estado] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Nombre] VARCHAR(50) NOT NULL,
+  [Descripcion] VARCHAR(200) NOT NULL,
+  PRIMARY KEY ([Id])
+);
+
+CREATE TABLE [Pedidos] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [IdUsuario] INT NOT NULL,
+  [IdEstado] INT NOT NULL,
+  [FechaPedido] DATE NOT NULL,
+  [FechaEstimada] DATE NOT NULL,
+  [Direccion] VARCHAR(500) NOT NULL,
+  PRIMARY KEY ([Id]),
+  CONSTRAINT [FK_Pedidos.IdUsuario]
+    FOREIGN KEY ([IdUsuario])
+      REFERENCES [Usuario]([Id]),
+  CONSTRAINT [FK_Pedidos.IdEstado]
+    FOREIGN KEY ([IdEstado])
+      REFERENCES [Estado]([Id])
+);
+
+CREATE INDEX [Clave] ON  [Pedidos] ([Direccion]);
+
+CREATE TABLE [Rol] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Nombre] VARCHAR(50) NOT NULL,
+  [Descripcion] VARCHAR(200) NOT NULL,
+  PRIMARY KEY ([Id])
+);
+
+CREATE TABLE [Empleado] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Usuario] VARCHAR(250) NOT NULL,
+  [CorreoElectronico] VARCHAR(250) NOT NULL,
+  [Contraseña] VARCHAR(250) NOT NULL,
+  [Nombre] VARCHAR(250) NOT NULL,
+  [Apellido] VARCHAR(250) NOT NULL,
+  [NumeroDeTelefono] VARCHAR(20) NOT NULL,
+  [Estado] BIT NOT NULL,
+  [FechaNacimiento] DATE NOT NULL,
+  [ImagenEmpleado] NVARCHAR(500) NOT NULL,
+  [Cedula] VARCHAR(25) NOT NULL,
+  [IdRol] INT NOT NULL,
+  PRIMARY KEY ([Id]),
+  CONSTRAINT [FK_Empleado.IdRol]
+    FOREIGN KEY ([IdRol])
+      REFERENCES [Rol]([Id])
+);
+
+CREATE TABLE [MetodoDePago] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Nombre] VARCHAR(50) NOT NULL,
+  [Descripcion] VARCHAR(200) NOT NULL,
+  PRIMARY KEY ([Id])
+);
+
+CREATE TABLE [Factura] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [IdPedido] INT NOT NULL,
+  [Cantidad] INT NOT NULL,
+  [PrecioTotal] FLOAT NOT NULL,
+  [IdMetodoPago] INT NOT NULL,
+  [Impuesto] FLOAT NOT NULL,
+  [CosteDeEnvio] FLOAT NOT NULL,
+  [IdEmpleado] INT NOT NULL,
+  [DireccionDeFacturacion] VARCHAR(500) NOT NULL,
+  PRIMARY KEY ([Id]),
+  CONSTRAINT [FK_Factura.IdEmpleado]
+    FOREIGN KEY ([IdEmpleado])
+      REFERENCES [Empleado]([Id]),
+  CONSTRAINT [FK_Factura.IdMetodoPago]
+    FOREIGN KEY ([IdMetodoPago])
+      REFERENCES [MetodoDePago]([Id])
+);
+
+CREATE INDEX [Clave] ON  [Factura] ([DireccionDeFacturacion]);
+
+CREATE TABLE [Categoria] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Nombre] VARCHAR(255) NOT NULL,
+  [Descripcion] VARCHAR(500)  NOT NULL,
+  PRIMARY KEY ([Id])
+);
+
+CREATE TABLE [Marca] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Nombre] VARCHAR(255) NOT NULL,
+  [Descripcion] VARCHAR(255) NOT NULL,
+  [Logo] NVARCHAR(255) NOT NULL,
+  PRIMARY KEY ([Id])
+);
+
+CREATE INDEX [Clave] ON  [Marca] ([Nombre], [Descripcion], [Logo]);
+
+CREATE TABLE [Producto] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Nombre] VARCHAR(255) NOT NULL,
+  [Descripcion] VARCHAR(500) NOT NULL,
+  [IdCategoria] INT NOT NULL,
+  [Precio] DECIMAL(10, 2) NOT NULL,
+  [Stock] INT NOT NULL,
+  [FechaDeCreacion] DATE NOT NULL,
+  [FechaUltimaModificacion] DATE NOT NULL,
+  [Estado] BIT NOT NULL,
+  [ImagenPrincipal] NVARCHAR(500) NOT NULL,
+  [IdMarca] INT NOT NULL,
+  PRIMARY KEY ([Id]),
+  CONSTRAINT [FK_Producto.IdCategoria]
+    FOREIGN KEY ([IdCategoria])
+      REFERENCES [Categoria]([Id]),
+  CONSTRAINT [FK_Producto.IdMarca]
+    FOREIGN KEY ([IdMarca])
+      REFERENCES [Marca]([Id])
+);
+
+CREATE TABLE [ProductoPedidos] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Idproducto] INT NOT NULL,
+  [Idpedidos] INT NOT NULL,
+  [Cantidad] INT NOT NULL,
+  [PrecioTotal] FLOAT NOT NULL,
+  PRIMARY KEY ([Id]),
+  CONSTRAINT [FK_ProductoPedidos.Idproducto]
+    FOREIGN KEY ([Idproducto])
+      REFERENCES [Producto]([Id]),
+  CONSTRAINT [FK_ProductoPedidos.Idpedidos]
+    FOREIGN KEY ([Idpedidos])
+      REFERENCES [Pedidos]([Id])
+);
+
+CREATE TABLE [ImagenesProductos] (
+  [Id] INT  NOT NULL IDENTITY(1,1),
+  [IdProducto] INT NOT NULL,
+  [Nombre] VARCHAR(255) NOT NULL,
+  [URL] NVARCHAR(500) NOT NULL,
+  [FechaDeCreacion] DATE  NOT NULL,
+  PRIMARY KEY ([Id]),
+  CONSTRAINT [FK_ImagenesProductos.IdProducto]
+    FOREIGN KEY ([IdProducto])
+      REFERENCES [Producto]([Id])
+);
+
+CREATE TABLE [Calificacion] (
+  [Id] INT NOT NULL IDENTITY(1,1),
+  [Puntuacion] FLOAT,
+  [IdProducto] INT NOT NULL,
+  [IdUsuario] INT NOT NULL,
+  PRIMARY KEY ([Id]),
+  CONSTRAINT [FK_Calificacion.IdProducto]
+    FOREIGN KEY ([IdProducto])
+      REFERENCES [Producto]([Id]),
+  CONSTRAINT [FK_Calificacion.IdUsuario]
+    FOREIGN KEY ([IdUsuario])
+      REFERENCES [Usuario]([Id])
+);
+
+CREATE INDEX [Clave] ON  [Calificacion] ([Puntuacion]);
+
+
+-------------------------------
+select * from Factura;
+select * from Pedidos;
+select * from Producto;
+select * from ProductoPedidos;
+select * from Estado;
+select * from Categoria;
+select * from Marca;
+select * from Calificacion;
+------------------------------
+
+select * from Usuario;
+SELECT AVG(Puntuacion) AS Promedio FROM Calificacion WHERE IdProducto = 1;
+
+INSERT INTO Calificacion(Puntuacion, IdProducto, IdUsuario)
+VALUES (4, 2, 3);
+
+INSERT INTO [Categoria] ([Nombre], [Descripcion])
+VALUES ('Celulares', 'Dispositivos móviles portátiles');
+
+INSERT INTO [Categoria] ([Nombre], [Descripcion])
+VALUES ('Computadoras', 'Dispositivos electrónicos para procesamiento de datos');
+
+INSERT INTO [Categoria] ([Nombre], [Descripcion])
+VALUES ('Televisores', 'Dispositivos electrónicos para procesamiento de datos');
+
+INSERT INTO [Marca] ([Nombre], [Descripcion], [Logo])
+VALUES ('Samsung', 'Marca de electrónica coreana', 'logo_samsung.png');
+
+INSERT INTO [Marca] ([Nombre], [Descripcion], [Logo])
+VALUES ('Apple', 'Marca de electrónica estadounidense', 'logo_apple.png');
+
+INSERT INTO [Producto] ([Nombre], [Descripcion ], [IdCategoria ], [Precio ], [Stock ], [FechaDeCreacion ], [FechaUltimaModificacion ], [Estado ], [ImagenPrincipal], [IdMarca])
+VALUES ('Samsung Galaxy S21', 'Smartphone de gama alta', 1, 1200.00, 50, '2022-01-01', '2022-01-02', 1, 'samsung_s21.jpg', 1);
+
+INSERT INTO [Producto] ([Nombre], [Descripcion ], [IdCategoria ], [Precio ], [Stock ], [FechaDeCreacion ], [FechaUltimaModificacion ], [Estado ], [ImagenPrincipal], [IdMarca])
+VALUES ('Apple MacBook Pro', 'Computadora portátil de alta gama', 2, 2500.00, 20, '2022-01-01', '2022-01-02', 1, 'macbook_pro.jpg', 2);
+
+INSERT INTO [Producto] ([Nombre], [Descripcion ], [IdCategoria ], [Precio ], [Stock ], [FechaDeCreacion ], [FechaUltimaModificacion ], [Estado ], [ImagenPrincipal], [IdMarca])
+VALUES ('Samsung QLED 4K TV', 'Televisor de alta definición', 3, 1500.00, 10, '2022-01-01', '2022-01-02', 1, 'samsung_tv.jpg', 1);
+
+-- Otros productos y marcas
