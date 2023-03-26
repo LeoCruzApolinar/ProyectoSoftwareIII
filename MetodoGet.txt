@@ -1,0 +1,79 @@
+//Funcion Get(llamar la lista)
+let listaProductoA = [];
+
+//Metodo para llamar luego que obtiene los datos
+function procesarRespuesta() {
+ // Obtén la plantilla de la card
+   const cardTemplate = document.querySelector('#card-template');
+
+   // Obtén el contenedor donde se mostrarán las cards
+   const cardsContainer = document.querySelector('#cards-container');
+ 
+   // Itera sobre la lista de datos y crea una card para cada elemento
+   listaProductoA.forEach(item => {
+     // Crea una copia de la plantilla de la card
+     const cardClone = cardTemplate.content.cloneNode(true);
+ 
+     // Obtén los elementos de la card
+     const cardImg = cardClone.querySelector('.card-img');
+     const cardTitle = cardClone.querySelector('.card-title');
+     const cardText = cardClone.querySelector('.card-text');
+ 
+     // Rellena los campos de la card con los datos del elemento actual
+     cardImg.src = item.imagen;
+     cardTitle.textContent = item.Nombre;
+     cardText.textContent = item.Descripcion;
+ 
+     // Agrega la card al contenedor de cards
+     cardsContainer.appendChild(cardClone);
+     console.log(listaProductoA)
+   });
+  
+  // Aquí puedes hacer lo que necesites con la lista de productos
+}
+
+//*******Comienzo Metodo Get********
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open('POST', 'https://servicioejemplo.azurewebsites.net/Servicio.asmx', true);
+
+// Crear la petición SOAP
+var sr =
+    '<?xml version="1.0" encoding="utf-8"?>' +
+    '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
+    '<soap:Body>' +
+    '<LlamarProductos xmlns="http://tempuri.org/"></LlamarProductos>' +
+    '</soap:Body>' +
+    '</soap:Envelope>';
+
+xmlhttp.onreadystatechange = function () {
+    if (xmlhttp.readyState == 4) {
+        if (xmlhttp.status == 200) {
+            // Extraer el resultado de la respuesta
+            var responseText = xmlhttp.responseText;
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(responseText, "text/xml");
+            var productos = xmlDoc.getElementsByTagName("ProductoReader");
+            
+            for (var i = 0; i < productos.length; i++) {
+                var producto = productos[i];
+                var productoA = {}; // Nuevo objeto para cada producto
+                productoA.Id = producto.getElementsByTagName("ID")[0].childNodes[0].nodeValue;
+                productoA.Nombre = producto.getElementsByTagName("Nombre")[0].childNodes[0].nodeValue;
+                productoA.Descripcion = producto.getElementsByTagName("Descripcion")[0].childNodes[0].nodeValue;
+                productoA.Precio = producto.getElementsByTagName("Precio")[0].childNodes[0].nodeValue;
+                productoA.CantidadDisponible = producto.getElementsByTagName("CantidadDisponible")[0].childNodes[0].nodeValue;
+                productoA.Categoria = producto.getElementsByTagName("Categoria")[0].childNodes[0].nodeValue;
+                productoA.imagen = producto.getElementsByTagName("Imagen")[0].childNodes[0].nodeValue;
+                productoA.Marca = producto.getElementsByTagName("Marca")[0].childNodes[0].nodeValue;
+                listaProductoA.push(productoA); 
+            }
+
+            procesarRespuesta(); // Llamar a la función para procesar la respuesta
+        } else {
+            console.error(xmlhttp.statusText);
+        }
+    }
+};
+xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+xmlhttp.send(sr);
