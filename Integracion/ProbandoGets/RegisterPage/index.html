@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    
+    <div class="content">
+        <nav>          
+           <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png">
+       </nav>
+        <div class="tabs">
+            <ul class="tab-group">
+                <li class="tab active"><a href="index.html">Sign Up</a></li>
+                <li class="tab"><a href="../LoginPage/login.html">Log In</a></li>
+            </ul>  
+        </div>
+
+        <form id="myForm"  onsubmit="return guardarDatos()">
+            <div class="info">
+                <!--<label for="Usuario">Usuario</label>-->
+                <input type="text" name="Nombre" placeholder="Nombres" required="true">
+            </div>
+            <div class="info ">   
+            <input type="text" name="Apellido" placeholder="Apellidos" required="true">
+            </div>
+            <div class="info">
+                <input type="email" name="Correo" placeholder="Correo electrónico" required="true">  
+            </div>
+            <div class="info">
+                <input type="text" name="Usuario" placeholder="Nombre de usuario" required="true">  
+            </div>
+            <div class="info">
+                <input type="password" name="Contraseña" placeholder="Contraseña" required="true">  
+            </div>
+            <div class="info">
+                <input type="tel" name="Telefono" placeholder="Teléfono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="true"> 
+            </div>
+            <div class="info">
+                <label class="BirthDate">Fecha de nacimiento:</label>
+                <input type="date" name="Fecha" required="true"> 
+            </div>
+            <div class="info">
+                <!-- <input type="submit" value="Entrar" > -->
+                <button class="btn btn-success" type="submit" value="Entrar" onclick="validarFormulario()">hello</button>
+            </div>           
+        </form>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
