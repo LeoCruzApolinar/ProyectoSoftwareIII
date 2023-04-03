@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="event.preventDefault(); ActualizarUsuario()">
+        <div>
+          <label for="usuario">Usuario:</label>
+          <input type="text" id="usuario" name="usuario" required>
+        </div>
+      
+        <div>
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
+      
+        <div>
+          <label for="contraseña">Contraseña:</label>
+          <input type="password" id="contraseña" name="contraseña" required>
+        </div>
+      
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+      
+        <div>
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" required>
+        </div>
+      
+        <div>
+          <label for="telefono">Número de teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required>
+        </div>
+      
+        <!-- <div>
+          <label for="estado">Estado:</label>
+          <select id="estado" name="estado" required>
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+          </select>
+        </div> -->
+      
+        <div>
+          <label for="fechaNacimiento">Fecha de nacimiento:</label>
+          <input type="date" id="fechaNacimiento" name="fechaNacimiento" >
+        </div>
+      
+        <div>
+          <label for="imagen">Imagen de usuario:</label>
+          <img id="imagenUser" src="" alt="no se pudo">
+          <input type="file" id="imagen" name="imagen" accept="image/*">
+        </div>
+      
+        <div>
+          <label for="direccion">Dirección:</label>
+          <textarea id="direccion" name="direccion" required></textarea>
+        </div>
+      
+        <button type="submit">Guardar</button>
+      </form>
+      <script src="./script.js"></script>
+</body>
+</html>

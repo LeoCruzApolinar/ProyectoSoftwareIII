@@ -28,10 +28,10 @@
             </ul>  
         </div>
       
-        <form id="formulario" name="Login"  action=""> 
+        <form id="formulario" name="Login"  action="" onsubmit="event.preventDefault(); validarFormulario()"> 
             <div class="info">
                
-                <input type="text" id="Usuario" name="Usuario" placeholder="Nombre de usuario" required="true">
+                <input type="text" id="Correo" name="Correo" placeholder="Correo de usuario" required="true">
             </div>
             <div class="info">
               
@@ -45,7 +45,8 @@
                  
             </div>
 
-            <button id="button">Login</button>
+            <!-- <button id="button">Login</button> -->
+
             <div class="info">
                 <input type="submit" value="Entrar"  >
             </div>

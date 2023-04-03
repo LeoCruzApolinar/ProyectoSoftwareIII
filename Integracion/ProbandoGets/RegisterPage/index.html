@@ -20,9 +20,9 @@
             </ul>  
         </div>
 
-        <form id="myForm"  onsubmit="return guardarDatos()">
+        <form id="myForm" method="post" action="../startbootstrap-shop-homepage-gh-pages/homepage.html" onsubmit="event.preventDefault(); guardarDatos(); ">
             <div class="info">
-                <!--<label for="Usuario">Usuario</label>-->
+               
                 <input type="text" name="Nombre" placeholder="Nombres" required="true">
             </div>
             <div class="info ">   
@@ -45,8 +45,8 @@
                 <input type="date" name="Fecha" required="true"> 
             </div>
             <div class="info">
-                <!-- <input type="submit" value="Entrar" > -->
-                <button class="btn btn-success" type="submit" value="Entrar" onclick="validarFormulario()">hello</button>
+                 <input type="submit" value="Entrar"  > 
+                <!-- <button class="btn btn-success"  value="Entrar" onclick="validarFormulario()">hello</button> -->
             </div>           
         </form>
     </div>
