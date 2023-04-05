@@ -1,0 +1,61 @@
+/* Estilos del menú lateral */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.menu-lateral nav {
+  padding-top: 50px;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-lateral li {
+  margin-bottom: 10px;
+}
+
+.menu-lateral a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.boton-menu {
+  background-color: #222;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Estilos para el contenido principal */
+.contenido-principal {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+/* Estilos para el menú lateral cuando se retrae */
+.menu-lateral.retraido {
+  width: 50px;
+}
+
+.menu-lateral.retraido nav {
+  display: none;
+}
+
+.menu-lateral.retraido .boton-menu {
+  width: 50px;
+}
