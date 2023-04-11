@@ -1,58 +1,58 @@
 HP Victus 15:
 $619.99
-Brand: HP
-Series: Victus
-Screen Size: 15.6 Inches
-Color: Silver
-CPU Model: AMD Ryzen 7 5800H
-Ram Memory Installed Size: 16 GB
-Operating System: Windows 11 Home
-Special Feature: Numeric Keypad, Memory Card Reader
-Graphics Coprocessor: NVIDIA GeForce RTX 3050
+Marca: HP
+Serie: Victus
+Tamaño de pantalla: 15.6 pulgadas
+Color: Plateado
+Modelo de CPU: AMD Ryzen 7 5800H
+Tamaño de memoria RAM instalada: 16 GB
+Sistema operativo: Windows 11 Home
+Característica especial: Teclado numérico, lector de tarjetas de memoria
+Coprocesador gráfico: NVIDIA GeForce RTX 3050
 
 Lenovo - Legion 5:
 $1029.00
-Brand: Lenovo
-Series: Lenovo Legion 5 15"
-Screen Size: 15.6
-Color: Phantom Blue
-CPU Model: Ryzen 5
-Ram Memory Installed Size: 8 GB
-Operating System: Windows 11 Home
-Graphics Coprocessor: NVIDIA GeForce RTX 3060
+Marca: Lenovo
+Serie: Lenovo Legion 5 15"
+Tamaño de pantalla: 15.6 pulgadas
+Color: Azul fantasma
+Modelo de CPU: Ryzen 5
+Tamaño de memoria RAM instalada: 8 GB
+Sistema operativo: Windows 11 Home
+Coprocesador gráfico: NVIDIA GeForce RTX 3060
 
 HP Pavilion 15 Laptop:
 $760.00
-Brand: HP
-Series: Pavilion
-Screen Size: 15.6 Inches
-Color: Natural silver aluminum
-Hard Disk Size: 512 GB
-CPU Model: Intel Core i7-1165G7
-Ram Memory Installed Size: 16 MB
-Operating System: Windows 11 Pro
-Special Feature: Backlit Keyboard, Fingerprint Reader, Memory Card Slot, Numeric Keypad
+Marca: HP
+Serie: Pavilion
+Tamaño de pantalla: 15.6 pulgadas
+Color: Aluminio plateado natural
+Tamaño del disco duro: 512 GB
+Modelo de CPU: Intel Core i7-1165G7
+Tamaño de memoria RAM instalada: 16 MB
+Sistema operativo: Windows 11 Pro
+Característica especial: Teclado retroiluminado, lector de huellas dactilares, ranura para tarjeta de memoria, teclado numérico
 
 Acer Nitro 5:
 $740.00
-Brand: Acer
-Series: AN515-57-79TD
-Screen Size: 15.6 Inches
-Color: Black
-Hard Disk Size: 512
-CPU Model: Core i7
-Ram Memory Installed Size: 8 GB
-Operating System: Windows 11 Home
-Special Feature: Backlit Keyboard
+Marca: Acer
+Serie: AN515-57-79TD
+Tamaño de pantalla: 15.6 pulgadas
+Color: Negro
+Tamaño del disco duro: 512 GB
+Modelo de CPU: Core i7
+Tamaño de memoria RAM instalada: 8 GB
+Sistema operativo: Windows 11 Home
+Característica especial: Teclado retroiluminado
 
 ASUS VivoBook 14:
 $320.00
-Brand: ASUS
-Series: ASUS VivoBook 14
-Screen Size: 14 Inches
-Color: Quiet Blue
-Hard Disk Size: 128 GB
-CPU Model: Core i3
-Ram Memory Installed Size: 4 GB
-Operating System: Windows 11 Home
-Special Feature: Fingerprint
+Marca: ASUS
+Serie: ASUS VivoBook 14
+Tamaño de pantalla: 14 pulgadas
+Color: Azul tranquilo
+Tamaño del disco duro: 128 GB
+Modelo de CPU: Core i3
+Tamaño de memoria RAM instalada: 4 GB
+Sistema operativo: Windows 11 Home
+Característica especial: Lector de huellas digitales
