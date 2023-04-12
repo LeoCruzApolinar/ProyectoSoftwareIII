@@ -1,0 +1,55 @@
+Apple iPhone 14, 128GB:
+$654.00
+Brand: Apple
+Model Name: iPhone 14
+Wireless Carrier: Unlocked
+Cellular Technology: 5G
+Memory Storage Capacity: 128 GB
+Connectivity technologies: Wi-Fi
+Color: Midnight
+Screen Size: 6.1 Inches
+Wireless network technology: GSM, LTE
+Connector Type: Lightning
+
+HUAWEI P50 Pro Global Model:
+$712.00
+Brand: HUAWEI
+Model Name: JAD-LX9
+Wireless Carrier: Unlocked for All Carriers
+Memory Storage Capacity: 8 GB
+Connectivity technologies: NFC
+Color: Gold
+Screen Size: 6.6 Inches
+Wireless network technology: GSM, LTE
+Ram Memory Installed Size: 8 GB
+
+Apple iPhone 12 Mini, 128GB:
+$335.00
+Brand:Apple
+Model Name: iPhone 12 Mini
+Wireless Carrier: Unlocked
+Cellular Technology: 5G, 2G
+Memory Storage Capacity: 128 GB
+Color: Red
+
+iPhone 13 Pro Max, 512GB:
+$1140.00
+Brand: Apple
+Model Name: iPhone 13 Pro Max
+Wireless Carrier: Unlocked for All Carriers
+Cellular Technology: 5G
+Memory Storage Capacity: 512 GB
+Connectivity technologies: Wi-Fi
+Color: Sierra Blue
+Screen Size: 6.7 Inches
+
+SAMSUNG Galaxy S23:
+$1179.99
+Brand: SAMSUNG
+Model Name: Samsung Galaxy S23 Ultra
+Wireless Carrier: Unlocked for All Carriers
+Cellular Technology: 5G
+Memory Storage Capacity: 512 GB
+Connectivity Technology: Bluetooth, Wi-Fi, USB, NFC
+Color: Lavender
+Screen Size: 6.8 Inches
