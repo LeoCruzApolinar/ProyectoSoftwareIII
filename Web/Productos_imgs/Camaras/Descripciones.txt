@@ -1,0 +1,49 @@
+Canon PowerShot Digital Camera:
+$630.00
+Brand: Canon
+Model Name: Canon PowerShot G7 X Mark II
+Form Factor: Compact
+Effective Still Resolution: 20.1
+Optical Zoom: 4.2 x
+
+Nikon Z50 Compact Mirrorless Digital Camera:
+$1245.00
+Brand: Nikon
+Model Name: Nikon Z50 Mirrorless Digital Camera w/ NIKKOR Z DX 16-50mm
+Effective Still Resolution: 20.9 MP
+Special Feature: EXPEED 6 Image Processor; Built-In Flash
+Optical Zoom: 5 x
+Color: Black
+Connectivity Technology: Bluetooth, Wi-Fi
+Screen Size: 3.2 Inches
+
+Nikon COOLPIX S9900 Digital Camera:
+$500.00
+Brand: Nikon
+Model Name: COOLPIX S9900
+Effective Still Resolution: 16 MP
+Optical Zoom: 12 x
+Color: Black
+Connectivity Technology: wi-fi
+Screen Size: 3 Inches
+Photo Sensor Size: 1/2.3-inch
+Video Capture Resolution: 1080p
+
+GoPro HERO11 Black:
+$450.00
+Brand: GoPro
+Connectivity Technology: USB
+Color: Black
+Special Feature: Waterproof
+Screen Size: 1.9 Inches
+
+Canon EOS Rebel T7 DSLR Camera:
+$430.00
+Brand: Canon
+Model Name: EOS REBEL T7 18-55mm f/3.5-5.6 IS II Kit
+Effective Still Resolution: 24.1 MP
+Special Feature: image-stabilization
+Color: Black
+Connectivity Technology: USB, HDMI, NFC
+Screen Size: 3 Inches
+
