@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <script src="https://kit.fontawesome.com/794f7b57c2.js" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" type="text/css" href="./css/PaginaPrincipal.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head> 
+<body>
+    <nav>
+        <ul>
+           <li class="logo"><a href="PaginaPrincipal.html"> Techverse</a></li>
+         <li>
+            <div class="submenu">
+                <button class="filter-icon"><i class="fas fa-filter"></i></button>
+                <div class="submenu-content">
+                  <a id="ordenPrecio" href="#">Categoría 1</a>
+                  <a href="#">Categoría 2</a>
+                  <a href="#">Categoría 3</a>
+                </div>
+              </div>
+              
+           <li class="search-icon">
+              <input type="search" placeholder="Search">
+              <label class="icon">
+              <span class="fas fa-search"></span>
+              </label>
+           </li>
+           
+           <div id="default-content" >
+            <div class="items">
+              <li><a href="../LoginPage/login.html">Iniciar sesion</a></li>
+              <li><a href="../RegisterPage/index.html">Registrarse</a></li>
+           </div> 
+           </div>
+           
+           <div id="alternative-content" style="display: none;">
+            <div class="account-info">
+                <li><img src="img/perfil-de-usuario.jpg" id="profile-pic"></a></li>
+                <li id="username">Username</li>
+                <li><button id="btn-logout">Cerrar sesion</button></li>
+            </div>
+           </div>
+         
+        </ul>
+     </nav>
+
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="../CarritoNuevo/carritonuevo.html">
+                    <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                    <span class="title">Carrito</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Pedidos/pedidosPage.html">
+                    <span class="icon"><i class="fas fa-box-open"></i></span>
+                    <span class="title">Pedidos</span>
+                </a>
+            </li>
+            <li>
+                <a href="../CuentaPage/Cuenta.html">
+                    <span class="icon"><i class="fas fa-user-circle"></i></span>
+                    <span class="title">Cuenta</span>
+                </a>
+            </li>
+            <li>
+                <a href="../aboutUsPage/aboutUs.html">
+                    <span class="icon"><i class="fas fa-users"></i></span>
+                    <span class="title">Nosotros</span>
+                </a>
+            </li>
+            <li>
+                <a href="../SoportePagina/soportePagina.html">
+                    <span class="icon"><i class="fas fa-question-circle"></i></span>
+                    <span class="title">Soporte</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="small-container">
+        <h2 class="titulo">Productos destacados</h2>
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="product-container">
+                   
+                    
+
+                   
+                       
+                        
+
+                    
+                   
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- <div class="row">
+            <div class="col-4">
+                <img src="./img/GoPro.jpg">
+                <h4>Go Pro</h4>
+                <p>50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="./img/GoPro.jpg">
+                <h4>Go Pro</h4>
+                <p>50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="./img/GoPro.jpg">
+                <h4>Go Pro</h4>
+                <p>50.00</p>
+            </div> -->
+            
+    </div>
+    
+
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script  src="../Metodos/MetodoProducto.js"></script>
+    <script src="../Metodos/MetodosUsuario.js"></script>
+    <script  src="./js/logout.js"></script>
+    <script type="module" src="./js/main.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+</body>
+<!--footer-->
+<footer>
+    <div class="container">
+        <div class="row-footer">
+            <div class="col-lg-3">
+                <div class="first-item">
+                    <div class="logo-footer">
+                        <img src="../imgGeneral/techverseLogoblanco.png" alt="hexashop ecommerce templatemo">
+                    </div>
+                    <ul>
+                        <li><a href="#">F386 Av. Winston Churchill, Esq. C. Victor Garrido Puello, SD, Rep. Dom.</a></li>
+                        <li><a href="#">techshop@techverse.com</a></li>
+                        <li><a href="#">809-020-0340</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <h4>Compras &amp; Categorías</h4>
+                <ul>
+                    <li><a href="#">Celulares</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Cámaras</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h4>Enlaces Útiles</h4>
+                <ul>
+                    <li><a href="PaginaPrincipal.html">Página principal</a></li>
+                    <li><a href="../Nosotros/AboutUs.html">Sobre nosotros</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Contáctenos</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h4>Ayuda &amp; Información</h4>
+                <ul>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Envío</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-12">
+                <div class="under-footer">
+                    <p>Copyright © 2023 Techverse Co. Todos los Derechos Reservados. 
+                    
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
